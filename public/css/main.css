@@ -1,0 +1,34 @@
+.navbar {
+  height: 5rem;
+  color: white;
+}
+.navbar .logo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: end;
+}
+.navbar .logo img {
+  margin-left: 6.7vw;
+  height: 4em;
+}
+.navbar .navbar-toggler {
+  margin-right: 3.5vw;
+}
+.navbar {
+  /* button next to search bar*/
+}
+.navbar .btn {
+  background-color: #8b3535;
+  border-color: #c2a6a6;
+}
+.navbar .btn:hover {
+  transform: scale(1.05);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=main.css.map */

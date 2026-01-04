@@ -1,97 +1,126 @@
 #!/usr/bin/env node
 import { Pool } from "pg";
 import "dotenv/config";
+import { watch } from "browser-sync";
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-//create toyota vehicle table
-const toyotaVehicleTable = `CREATE TABLE toyota_vehicle (
-  toyota_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+//create meat table
+const createMeatTable = `
+CREATE TABLE meat (
+  meat_id SERIAL PRIMARY KEY,
   name VARCHAR(50),
-  type VARCHAR(50)
+  type VARCHAR(50),
+  quantity INT,
+  image_url VARCHAR(255),
+  price DECIMAL(7,2)
 );`;
 
-//add some vehicle to vehicle table
-const insertVehicle = `INSERT INTO toyota_vehicle (name, type) VALUES 
-  ('RAV4', 'SUV'),
-  ('Camry', 'Sedan'),
-  ('Prius', 'Hybrid'),
-  ('Tacoma', 'Truck');`;
-
-//function to create model tables
-const generateTypeTable = (type) => `CREATE TABLE IF NOT EXISTS ${type} (
-    suv_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    toyota_id INT,
-    model VARCHAR(50),
-    image_url VARCHAR(255), 
-    year INT,
-    price DECIMAL(10,2),
-    FOREIGN KEY (toyota_id) REFERENCES toyota_vehicle(toyota_id) ON DELETE CASCADE
-);`;
-
-//function to insert car to the corresponding table
-const insertCars = (
-  type,
-  toyota_id,
-  model,
-  image_url,
-  year,
-  price,
-) => `INSERT INTO ${type} (toyota_id, model, image_url, year, price) VALUES (${toyota_id}, '${model}', '${image_url}', ${year}, ${price});
-`;
-
+//add some meat to the table
+const insertMeat = (name, type, quantity, image_url, price) =>
+  `INSERT INTO meat (name, type, quantity, image_url, price) VALUES ('${name}', '${type}', ${quantity}, '${image_url}', ${price});`;
 (async () => {
   console.log("seeding...");
   try {
-    await pool.query(toyotaVehicleTable);
-    await pool.query(insertVehicle);
-    await pool.query(generateTypeTable("SUV"));
-    await pool.query(generateTypeTable("Sedan"));
-    await pool.query(generateTypeTable("Hybrid"));
-    await pool.query(generateTypeTable("Truck"));
-
+    await pool.query(createMeatTable);
     await pool.query(
-      insertCars(
-        "SUV",
-        1,
-        "RAV4",
-        "https://mystrongad.com/toyota/2025/rav4/2025-toyota-rav4-gray.webp",
-        2025,
-        29800,
+      insertMeat(
+        "Ribeye",
+        "Beef",
+        12,
+        "https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml",
+        25.21,
       ),
     );
     await pool.query(
-      insertCars(
-        "Sedan",
-        2,
-        "Camry",
-        "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSBOmhFx4WrXK-FFmM-r5SWrmYJALQsM71F4TUEfoflR3levTgAa3kB7Ph4jRCfo0Jy7POTcCJV6jtujo4veMDjaFHhEh74UA",
-        2025,
-        28700,
+      insertMeat(
+        "T Bone",
+        "Beef",
+        20,
+        "https://normanhotel.com.au/wp-content/uploads/2021/12/Beef-T-Bone-scaled.jpg",
+        14.67,
       ),
     );
 
     await pool.query(
-      insertCars(
-        "Hybrid",
+      insertMeat(
+        "Pork Chop",
+        "Pork",
+        54,
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5JQU-2kMlWJ0W-QEJZRdXaeueRk1hdJ_rxw&s",
+        8.79,
+      ),
+    );
+
+    await pool.query(
+      insertMeat(
+        "Bacon",
+        "Pork",
+        22,
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpREs_6yZ-61V_OJX6LqhwYZrvnUdsa3IBxQ&s",
+        10.79,
+      ),
+    );
+
+    await pool.query(
+      insertMeat(
+        "Chicken Breast",
+        "Poultry",
+        11,
+        "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_6d0c0d25-f67d-4828-99c2-f12a9327224a.jpg",
+        13.19,
+      ),
+    );
+
+    await pool.query(
+      insertMeat(
+        "Chicken Thigh",
+        "Poultry",
+        41,
+        "https://img.freepik.com/premium-photo/fresh-chicken-thighs-isolated-white-background_461160-1669.jpg",
+        3.99,
+      ),
+    );
+
+    await pool.query(
+      insertMeat(
+        "Ground Lamb",
+        "Poultry",
+        41,
+        "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_d3ca0c95-d9b2-444c-bc16-bb1fae8b160e.jpeg",
+        20.99,
+      ),
+    );
+
+    await pool.query(
+      insertMeat(
+        "Salmon",
+        "Seafood",
         3,
-        "Prius",
-        "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRCDNoKvzyY1LwCXBGoS64Mv6w42FUuDxRgDAloO7kskdPUZ8nEc_4DmYTZN_OQ1q1w4cMGrTtw-qHeW1GyCUdQpuHvmnTJRA",
-        2025,
-        28550,
+        "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_d3ca0c95-d9b2-444c-bc16-bb1fae8b160e.jpeg",
+        40.29,
       ),
     );
 
     await pool.query(
-      insertCars(
-        "Truck",
-        4,
-        "Tacoma",
-        "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSydi8PcgICY7D8wkL-JDYgxukMUgilGmMAsuf7PXIdtEdCTjfzPuZC-reHfGEiQa5k4AgWf_hiCpsWQsBzH85G8JAsfQSGVw",
-        2025,
-        31590,
+      insertMeat(
+        "Salmon",
+        "Seafood",
+        5,
+        "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_d3ca0c95-d9b2-444c-bc16-bb1fae8b160e.jpeg",
+        50.19,
+      ),
+    );
+
+    await pool.query(
+      insertMeat(
+        "Sausage",
+        "Processed",
+        23,
+        "https://www.greenfreshfood.com/storage/uploads/images/202310/05/1696483902_YYrsKCAdw7.jpg",
+        10.93,
       ),
     );
 
