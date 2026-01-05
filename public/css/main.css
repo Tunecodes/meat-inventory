@@ -1,16 +1,27 @@
 .navbar {
-  height: 5rem;
+  --bs-dark-rgb: 10, 15, 15;
+  background-color: blue;
+  height: 5.5rem;
+}
+.navbar a {
+  text-decoration: none;
+}
+.navbar a h2 {
   color: white;
 }
 .navbar .logo {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  align-items: end;
+  align-items: center;
+  margin-left: 5vw;
 }
 .navbar .logo img {
-  margin-left: 6.7vw;
   height: 4em;
+}
+.navbar .logo h2 {
+  padding-top: 10px;
+  font-size: 48px;
 }
 .navbar .navbar-toggler {
   margin-right: 3.5vw;
@@ -26,9 +37,77 @@
   transform: scale(1.05);
 }
 
+.footer {
+  display: flex;
+  background-color: #212529;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  gap: 20px;
+  justify-content: center;
+}
+.footer div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.footer div a {
+  color: white;
+}
+.footer div a:hover {
+  color: gray;
+}
+
 body {
-  padding: 0;
-  margin: 0;
+  display: grid;
+  height: 100vh;
+  gap: 10px;
+}
+
+@keyframes right-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+header {
+  justify-self: center;
+  margin-top: 5px !important;
+  font-size: 25px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.d-grid {
+  width: 65vw;
+  gap: 2em !important;
+}
+.d-grid button {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), url("https://media.istockphoto.com/id/1793516952/vector/seamless-pattern-with-meat.jpg?s=612x612&w=0&k=20&c=GWYfCH-UPuUs-CQwF9ejnoEsSkeHR_S58X4O7t5AnOw=");
+  height: 12em;
+  border-radius: 4rem;
+  border: none;
+}
+.d-grid button:hover {
+  transform: scale(1.01);
+  transition: transform 0.5s ease;
+}
+.d-grid button:hover div .arrow {
+  animation: right-left 0.67s infinite ease-in-out alternate;
+}
+.d-grid button div {
+  color: black;
+  display: flex;
+  justify-self: start;
+  font-size: 52px;
+  margin-left: 1.5em;
+}
+.d-grid button .arrow {
+  margin-left: 0.5em;
 }
 
 /*# sourceMappingURL=main.css.map */

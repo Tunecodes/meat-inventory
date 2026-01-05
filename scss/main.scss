@@ -1,6 +1,68 @@
 @use "partials/header";
+@use "partials/footer";
 
 body {
-  padding: 0;
-  margin: 0;
+  display: grid;
+  height: 100vh;
+  gap: 10px;
+}
+
+@keyframes right-left {
+  0% {
+    transform: translateX(0)
+  }
+
+  100% {
+    transform: translateX(15px);
+  }
+
+}
+
+
+header {
+  justify-self: center;
+  margin-top: 5px !important;
+  font-size: 25px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.d-grid {
+  width: 65vw;
+  gap: 2em !important;
+
+
+  button {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0.1)),
+      url("https://media.istockphoto.com/id/1793516952/vector/seamless-pattern-with-meat.jpg?s=612x612&w=0&k=20&c=GWYfCH-UPuUs-CQwF9ejnoEsSkeHR_S58X4O7t5AnOw=");
+    height: 12em;
+    border-radius: 4rem;
+    border: none;
+
+    &:hover {
+      transform: scale(1.01);
+      transition: transform .5s ease;
+
+      div {
+        .arrow {
+          animation: right-left 0.67s infinite ease-in-out alternate;
+        }
+      }
+    }
+
+
+    div {
+      color: black;
+      display: flex;
+      justify-self: start;
+      font-size: 52px;
+      margin-left: 1.5em;
+    }
+
+    .arrow {
+      margin-left: 0.5em
+    }
+
+  }
 }

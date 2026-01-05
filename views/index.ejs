@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Toyota</title>
+    <title>Meat</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,6 +14,31 @@
   </head>
   <body>
     <%- include("partials/header.ejs") %>
+    <header>
+      <h1>WELCOME</h1>
+      <p>
+        Welcome to Meat! Easily manage your store’s inventory all in one place.
+        Add meat and type of meat with images to fit your needs. Get started and
+        don’t forget to leave a review in the app store!
+      </p>
+    </header>
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn" type="button">
+        <div>
+          Shop Meat
+          <div class="arrow">-></div>
+        </div>
+      </button>
+      <button class="btn" type="button">
+        <div>
+          View Meat Type
+          <div class="arrow">-></div>
+        </div>
+      </button>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

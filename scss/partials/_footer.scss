@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  background-color: #212529;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  gap: 20px;
+  justify-content: center;
+
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    a {
+      color: white;
+
+      &:hover {
+        color: gray;
+      }
+    }
+
+  }
+}
