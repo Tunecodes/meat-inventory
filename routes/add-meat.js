@@ -1,8 +1,8 @@
 import express from "express";
-import meat from "../controllers/meat.js";
+import add from "../controllers/add-meat.js";
 
 const router = express.Router();
 
-router.get("/", meat.render);
+router.get("/", add.render);
 
 export default { router };

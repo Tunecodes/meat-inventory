@@ -1,0 +1,50 @@
+@use "./partials/header";
+@use "./partials/footer";
+@use "./abstracts/variables" as v;
+@use "./abstracts/mixins" as m;
+
+
+.container {
+  display: flex;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    display: grid;
+    background-color: v.$cnt-bkg-color;
+    color: v.$theme-color;
+    width: 45vw;
+    height: 500px;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  form,
+  button {
+    border-radius: 15px;
+  }
+
+  input {
+    width: 35vw;
+  }
+
+  button {
+    @include m.btn;
+    border: white;
+    color: white;
+  }
+
+  select {
+    background-color: #8b3535;
+    color: white;
+    border: none;
+    min-width: 200px;
+    min-height: 35px;
+  }
+}
+
+label {
+
+  font-size: 20px;
+}

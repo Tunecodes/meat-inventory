@@ -1,15 +1,17 @@
+@use "../abstracts/variables" as v;
+
 .footer {
   display: flex;
-  background-color: #212529;
-  bottom: 0;
+  background-color: v.$theme-color;
   width: 100%;
   color: white;
   gap: 20px;
   justify-content: center;
+  min-height: 70px;
+  margin-top: 24px;
 
   div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;

@@ -1,0 +1,118 @@
+.navbar {
+  --bs-dark-rgb: 10, 15, 15;
+  background-color: blue;
+  height: 5.5rem;
+}
+.navbar a {
+  text-decoration: none;
+}
+.navbar a h2 {
+  color: white;
+}
+.navbar .logo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  margin-left: 5vw;
+}
+.navbar .logo img {
+  height: 4em;
+}
+.navbar .logo h2 {
+  padding-top: 10px;
+  font-size: 48px;
+}
+.navbar .navbar-toggler {
+  margin-right: 3.5vw;
+}
+.navbar {
+  /* button next to search bar*/
+}
+.navbar .btn,
+.navbar #add-meat-btn {
+  background-color: #8b3535;
+  border-color: #c2a6a6;
+}
+.navbar .btn:hover,
+.navbar #add-meat-btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+}
+.navbar #add-meat-btn {
+  border-radius: 0.375rem;
+  border: none;
+  color: white;
+  margin-top: 0.75em;
+}
+
+.footer {
+  display: flex;
+  background-color: #0a0f0f;
+  width: 100%;
+  color: white;
+  gap: 20px;
+  justify-content: center;
+  min-height: 70px;
+  margin-top: 24px;
+}
+.footer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.footer div a {
+  color: white;
+}
+.footer div a:hover {
+  color: gray;
+}
+
+.container {
+  display: flex;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+}
+.container form {
+  display: grid;
+  background-color: rgba(140, 55, 55, 0.25);
+  color: #0a0f0f;
+  width: 45vw;
+  height: 500px;
+  justify-content: center;
+  padding: 15px;
+}
+.container form,
+.container button {
+  border-radius: 15px;
+}
+.container input {
+  width: 35vw;
+}
+.container button {
+  background-color: #8b3535;
+  border-color: #c2a6a6;
+}
+.container button:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+}
+.container button {
+  border: white;
+  color: white;
+}
+.container select {
+  background-color: #8b3535;
+  color: white;
+  border: none;
+  min-width: 200px;
+  min-height: 35px;
+}
+
+label {
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=add-meat.css.map */

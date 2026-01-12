@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="logo" href="https://github.com/Tunecodes">
+    <a class="logo" href="/">
       <img src="https://openclipart.org/image/400px/336344" alt="Meat" />
       <h2>Meat</h2>
     </a>
@@ -32,15 +32,23 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Meat</a>
+            <a class="nav-link" href="/meat">Meat</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="#">Type</a>
           </li>
+
+          <button
+            id="add-meat-btn"
+            type="button"
+            onclick="location.href = '/add'"
+          >
+            Add Meat
+          </button>
         </ul>
         <form class="d-flex mt-3" role="search">
           <input

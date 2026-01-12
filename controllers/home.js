@@ -1,7 +1,7 @@
 import path from "path";
 
 const mainPage = (req, res) => {
-  res.render("index");
+  res.render("home");
 };
 
 export default { mainPage };

@@ -37,14 +37,16 @@
   }
 
   /* button next to search bar*/
-  .btn {
-    background-color: #8b3535;
-    border-color: #c2a6a6;
+  .btn,
+  #add-meat-btn {
+    @include m.btn
+  }
 
-    &:hover {
-      transform: scale(1.05);
-
-    }
+  #add-meat-btn {
+    border-radius: 0.375rem;
+    border: none;
+    color: white;
+    margin-top: .75em;
   }
 
 }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/meat.css" />
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+
+    <div class="container">
+      <h1>MEAT</h1>
+      <div class="main-container">
+        <form class="filter-container">
+          <label>Sort By Name:</label>
+          <br />
+          <input
+            type="radio"
+            id="name-ascending"
+            name="sort-name"
+            value="ascending"
+          />
+          <label for="name-ascending">Ascending</label>
+
+          <br />
+          <input
+            type="radio"
+            id="name-descending"
+            name="sort-name"
+            value="descending"
+          />
+          <label for="name-descending">Descending</label>
+
+          <br />
+          <br />
+
+          <label>Sort By Price:</label>
+          <br />
+          <input
+            type="radio"
+            id="price-ascending"
+            name="sort-price"
+            value="ascending"
+          />
+          <label for="price-ascending">Ascending</label>
+          <br />
+          <input
+            type="radio"
+            id="price-descending"
+            name="sort-price"
+            value="descending"
+          />
+          <label for="price-descending">Descending</label>
+
+          <br />
+          <br />
+
+          <label>Filter By Type:</label>
+          <br />
+
+          <input type="checkbox" id="beef" name="type" value="beef" />
+          <label for="beef">Beef</label>
+          <br />
+
+          <input type="checkbox" id="pork" name="type" value="pork" />
+          <label for="pork">Pork</label>
+          <br />
+
+          <input type="checkbox" id="poultry" name="type" value="poultry" />
+          <label for="poultry">Poultry</label>
+          <br />
+
+          <input type="checkbox" id="seafood" name="type" value="seafood" />
+          <label for="seafood">Seafood</label>
+          <br />
+
+          <input type="checkbox" id="processed" name="type" value="processed" />
+          <label for="Processed">Processed</label>
+          <br />
+          <br />
+          <button type="submit">Filter</button>
+          <br />
+  
+        </form>
+        <div class="meat-container">
+          <a class="meat-card" type="button" href="/">
+            <div class="card-type">Beef</div>
+            <img
+              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
+              alt=""
+            />
+            <label class="card-name">Ribeye </label>
+            <label class="card-price">Price: $223</label>
+            <label class="card-quantity">Quantity: 12 </label>
+          </a>
+
+          <div class="meat-card">
+            <img
+              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
+              alt=""
+            />
+          </div>
+          <div class="meat-card">
+            <img
+              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
+              alt=""
+            />
+          </div>
+          <div class="meat-card">
+            <img
+              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
+              alt=""
+            />
+          </div>
+          <div class="meat-card">
+            <img
+              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
