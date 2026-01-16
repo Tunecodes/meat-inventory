@@ -99,18 +99,28 @@ const insertMeat = (name, type, quantity, image_url, price) =>
         "Salmon",
         "Seafood",
         3,
-        "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_d3ca0c95-d9b2-444c-bc16-bb1fae8b160e.jpeg",
+        "https://www.bigalaskaseafood.com/cdn/shop/files/fresh_king_fillet_BAS_24.jpg?v=1721857450",
         40.29,
       ),
     );
 
     await pool.query(
       insertMeat(
-        "Salmon",
+        "Tuna",
         "Seafood",
         5,
-        "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_d3ca0c95-d9b2-444c-bc16-bb1fae8b160e.jpeg",
-        50.19,
+        "https://shop.yamaseafood.com/cdn/shop/products/FreshTuna-997213.png?v=1707412526",
+        23.19,
+      ),
+    );
+
+    await pool.query(
+      insertMeat(
+        "Shrimp",
+        "Seafood",
+        55,
+        "https://www.honolulucatch.com/cdn/shop/products/cpd_L_HC_4.0_1000x1000.jpg?v=1681241910",
+        12.36,
       ),
     );
 

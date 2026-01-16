@@ -15,7 +15,7 @@
   <body>
     <%- include("partials/header.ejs") %>
     <div class="container">
-      <form action="/submit" method="GET">
+      <form action="add/submit" method="POST">
         <div>
           <label for="name"></label>Name:
           <br />
@@ -42,12 +42,12 @@
         <div>
           <label for="select-type">Select Meat:</label>
           <br />
-          <select name="select-type" id="select-type" required>
-            <option value="beef">Beef</option>
-            <option value="pork">Pork</option>
-            <option value="poultry">Poultry</option>
-            <option value="seafood">Seafood</option>
-            <option value="processed">Processed</option>
+          <select name="type" id="select-type" required>
+            <option value="Beef">Beef</option>
+            <option value="Pork">Pork</option>
+            <option value="Poultry">Poultry</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Processed">Processed</option>
           </select>
         </div>
 

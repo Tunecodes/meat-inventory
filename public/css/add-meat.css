@@ -110,6 +110,9 @@
   min-width: 200px;
   min-height: 35px;
 }
+.container select:hover {
+  cursor: pointer;
+}
 
 label {
   font-size: 20px;

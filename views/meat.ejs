@@ -19,112 +19,83 @@
       <h1>MEAT</h1>
       <div class="main-container">
         <form class="filter-container">
-          <label>Sort By Name:</label>
+          <label class="flt-label">Sort By Name:</label>
           <br />
-          <input
-            type="radio"
-            id="name-ascending"
-            name="sort-name"
-            value="ascending"
-          />
+          <input type="radio" id="name-ascending" name="sort" value="nameAsc" <%= sort === 'nameAsc' ? 'checked' : ''%>/>
           <label for="name-ascending">Ascending</label>
-
           <br />
           <input
             type="radio"
             id="name-descending"
-            name="sort-name"
-            value="descending"
+            name="sort"
+            value="nameDesc"
+            <%= sort === 'nameDesc' ? 'checked' : ''%>
           />
           <label for="name-descending">Descending</label>
 
           <br />
           <br />
 
-          <label>Sort By Price:</label>
+          <label class="flt-label">Sort By Price:</label>
           <br />
           <input
             type="radio"
             id="price-ascending"
-            name="sort-price"
-            value="ascending"
+            name="sort"
+            value="priceAsc"
+            <%= sort === 'priceAsc' ? 'checked' : ''%>
           />
           <label for="price-ascending">Ascending</label>
           <br />
           <input
             type="radio"
             id="price-descending"
-            name="sort-price"
-            value="descending"
+            name="sort"
+            value="priceDesc"
+            <%= sort === 'priceDesc' ? 'checked' : ''%>
           />
           <label for="price-descending">Descending</label>
 
           <br />
           <br />
 
-          <label>Filter By Type:</label>
+          <label class="flt-label">Filter By Type:</label>
           <br />
 
-          <input type="checkbox" id="beef" name="type" value="beef" />
-          <label for="beef">Beef</label>
+          <input type="checkbox" id="Beef" name="type" value="Beef" <%= types.includes('Beef') ? 'checked' : '' %>/>
+          <label class="Beef" for="Beef">Beef</label>
           <br />
 
-          <input type="checkbox" id="pork" name="type" value="pork" />
-          <label for="pork">Pork</label>
+          <input type="checkbox" id="Pork" name="type" value="Pork" <%= types.includes('Pork') ? 'checked' : '' %>/>
+          <label class="Pork" for="Pork">Pork</label>
           <br />
 
-          <input type="checkbox" id="poultry" name="type" value="poultry" />
-          <label for="poultry">Poultry</label>
+          <input type="checkbox" id="Poultry" name="type" value="Poultry" <%= types.includes('Poultry') ? 'checked' : '' %>/>
+          <label class="Poultry" for="Poultry">Poultry</label>
           <br />
 
-          <input type="checkbox" id="seafood" name="type" value="seafood" />
-          <label for="seafood">Seafood</label>
+          <input type="checkbox" id="Seafood" name="type" value="Seafood" <%= types.includes('Seafood') ? 'checked' : '' %>/>
+          <label class="Seafood" for="Seafood">Seafood</label>
           <br />
 
-          <input type="checkbox" id="processed" name="type" value="processed" />
-          <label for="Processed">Processed</label>
+          <input type="checkbox" id="Processed" name="type" value="Processed" <%= types.includes('Processed') ? 'checked' : '' %>/>
+          <label class="Processed" for="Processed">Processed</label>
           <br />
           <br />
-          <button type="submit">Filter</button>
+          <button id="filter-btn" type="submit">Filter</button>
           <br />
-  
         </form>
         <div class="meat-container">
+          <% meats.forEach(meat => { %>
           <a class="meat-card" type="button" href="/">
-            <div class="card-type">Beef</div>
-            <img
-              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
-              alt=""
-            />
-            <label class="card-name">Ribeye </label>
-            <label class="card-price">Price: $223</label>
-            <label class="card-quantity">Quantity: 12 </label>
+            <div class="card-type <%= meat.type %>"><%= meat.type %></div>
+            <img src="<%=meat.image_url%>" alt="" />
+            <label class="card-name"><%= meat.name %> </label>
+            <label class="card-price">Price: $<%= meat.price %></label>
+            <label class="card-quantity">Quantity: <%= meat.quantity %> </label>
           </a>
 
-          <div class="meat-card">
-            <img
-              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
-              alt=""
-            />
-          </div>
-          <div class="meat-card">
-            <img
-              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
-              alt=""
-            />
-          </div>
-          <div class="meat-card">
-            <img
-              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
-              alt=""
-            />
-          </div>
-          <div class="meat-card">
-            <img
-              src="https://embed.widencdn.net/img/beef/ng96sbyljl/800x600px/Ribeye%20Steak_Lip-on.psd?keep=c&u=7fueml"
-              alt=""
-            />
-          </div>
+          <% }) %>
         </div>
       </div>
     </div>

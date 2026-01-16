@@ -74,40 +74,42 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-rows: 2fr 7fr;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   align-items: center;
+}
+.container h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .main-container {
   display: grid;
-  grid-template-columns: 1fr 5fr;
-  border: 1px solid #ab7d7d;
+  grid-template-columns: 1fr 10fr;
   border-radius: 15px;
+  width: 90vw;
+  min-width: 400px;
+  padding: 20px;
+  background-color: #F5F5F5;
 }
 
 .meat-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 190px));
-  padding: 5%;
-  justify-content: center;
-  align-content: center;
-  background-color: rgba(140, 55, 55, 0.25);
-  gap: 50px;
-  border-radius: 0 13.5px 13.5px 0;
-  border-left: 1px solid black;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+  gap: 2.5em;
 }
 .meat-container .meat-card {
   display: flex;
   flex-direction: column;
   background-color: white;
-  width: 200px;
+  width: clamp(100px, 40vw, 215px);
   height: 250px;
   color: black;
   align-items: center;
   border-radius: 12px;
   text-decoration: none;
+  padding-bottom: 1em;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1), 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 .meat-container .meat-card:hover {
@@ -120,10 +122,10 @@ body {
 }
 .meat-container .meat-card img {
   max-height: 100px;
+  margin-top: 10px;
 }
 .meat-container .meat-card .card-type {
   display: flex;
-  background-color: red;
   width: 100%;
   height: 20%;
   justify-content: center;
@@ -132,20 +134,59 @@ body {
 }
 
 .filter-container {
-  padding: 10%;
-  min-width: 250px;
+  width: 150px;
+  margin-right: 3em;
+  font-size: 20px;
+}
+.filter-container .flt-label {
+  font-weight: bold;
 }
 .filter-container input:hover {
   cursor: pointer;
 }
 .filter-container label {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  width: 100px;
 }
-.filter-container label[for=beef] {
-  background-color: red;
+.filter-container .Beef,
+.filter-container .Pork,
+.filter-container .Poultry,
+.filter-container .Seafood,
+.filter-container .Processed {
+  margin-top: 15px;
+  padding: 0px 10px 0px 10px;
+}
+.filter-container #filter-btn {
+  border: none;
+  border-radius: 12px;
+  background-color: #9c9c9c;
+  width: 6.5em;
+}
+.filter-container #filter-btn:hover {
+  background-color: #d9d9d9;
+  transform: scale(1.05);
+  transition: background-color 0.5s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* color code for type of meat */
+.Beef {
+  background-color: #8B0000;
+}
+
+.Pork {
+  background-color: #FFC0CB;
+}
+
+.Poultry {
+  background-color: #FFD700;
+}
+
+.Seafood {
+  background-color: #20B2AA;
+}
+
+.Processed {
+  background-color: #D2B48C;
 }
 
 /*# sourceMappingURL=meat.css.map */
