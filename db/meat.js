@@ -28,4 +28,23 @@ const sort = async (col, order, types = []) => {
   return result.rows;
 };
 
-export default { addMeat, getAllMeat, sort };
+//get meat by name
+const getMeat = async (name) => {
+  const result = await pool.query(`SELECT * FROM meat WHERE name = ($1)`, [
+    name,
+  ]);
+  return result.rows;
+};
+
+//update meat
+const updateMeat = async (oldName, newName, price, quantity) => {
+  await pool.query(
+    `UPDATE meat SET name = $2, price = $3, quantity = $4 WHERE name = $1`,
+    [oldName, newName, price, quantity],
+  );
+};
+
+const removeMeat = async (name) => {
+  await pool.query(`DELETE FROM meat where name = $1`, [name]);
+};
+export default { addMeat, getAllMeat, sort, getMeat, updateMeat, removeMeat };

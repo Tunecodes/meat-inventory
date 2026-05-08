@@ -10,40 +10,20 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/type.css" />
   </head>
   <body>
     <%- include("partials/header.ejs") %>
-    <header>
-      <h1>WELCOME</h1>
-      <p>
-        Welcome to Meat! Easily manage your store’s inventory all in one place.
-        Add meat and type of meat with images to fit your needs. Get started and
-        don’t forget to leave a review in the app store!
-      </p>
-    </header>
-
-    <div class="d-grid gap-2 col-6 mx-auto">
-      <button
-        class="btn"
-        type="button"
-        onclick="location.href = '/meat?sort=nameAsc'"
+    <nav class="container">
+      <a class="Beef" href="/meat?sort=nameAsc&type=Beef">Beef</a>
+      <a class="Pork" href="/meat?sort=nameAsc&type=Pork">Pork</a>
+      <a class="Poultry" href="meat?sort=nameAsc&type=Poultry">Poultry</a>
+      <a class="Seafood" href="/meat?sort=nameAsc&type=Seafood">Seafood</a>
+      <a class="Processed" href="/meat?sort=nameAsc&type=Processed"
+        >Processed</a
       >
-        <div>
-          Shop Meat
-          <div class="arrow">-></div>
-        </div>
-      </button>
-      <button class="btn" type="button" onclick="location.href = '/category'">
-        <div>
-          View Meat Type
-          <div class="arrow">-></div>
-        </div>
-      </button>
-    </div>
-
+    </nav>
     <%- include("partials/footer.ejs") %>
-
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

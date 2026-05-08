@@ -17,11 +17,35 @@ const render = async (req, res) => {
     priceAsc: { col: "price", order: "ASC" },
     priceDesc: { col: "price", order: "DESC" },
   };
-  console.log(sort);
 
   const sortOrder = SORT_MAP[sort];
   meats = await db.sort(sortOrder.col, sortOrder.order, types);
   res.render("meat", { meats, types, sort });
 };
 
-export default { render };
+const getMeat = async (req, res) => {
+  const { name } = req.body;
+  const meat = await db.getMeat(name);
+  res.json(meat);
+};
+
+const updateMeat = async (req, res) => {
+  try {
+    const { name, newName, price, quantity } = req.body;
+
+    await db.updateMeat(name, newName, price, quantity);
+  } catch (err) {
+    res.status(500).json({ message: "Update failed" });
+  }
+};
+
+const removeMeat = async (req, res) => {
+  try {
+    const { name } = req.body;
+    await db.removeMeat(name);
+    res.status(200).json({ message: "Deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ message: "Delete failed" });
+  }
+};
+export default { render, getMeat, updateMeat, removeMeat };

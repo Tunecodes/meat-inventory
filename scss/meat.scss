@@ -6,6 +6,97 @@ body {
   margin: 0;
 }
 
+/*modal */
+
+.card-modal {
+  width: 50vw;
+  height: 40vh;
+  padding: 0px;
+  border: none;
+  max-width: 41rem;
+  border-radius: 15px;
+
+
+  :focus-visible {
+    outline: none;
+  }
+
+
+  &:open {
+    display: grid;
+    grid-template-rows: 50px;
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  >div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    >form {
+      label {
+        font-size: 24px;
+      }
+
+      display: grid;
+      grid-template-rows: auto;
+      gap: 20px;
+
+      button {
+        width: 85%;
+        border: none;
+
+        &:hover {
+          transform: scale(1.05);
+          transition: background-color 0.5s ease-in-out, transform 0.4s ease-in-out;
+        }
+      }
+
+    }
+  }
+
+
+  img {
+    justify-self: center;
+    width: 75%;
+    height: 65%;
+  }
+
+  h1 {
+    height: 50px;
+    font-weight: normal;
+    font-size: 2em;
+    align-content: center;
+  }
+
+  .price-label {
+    display: flex;
+    font-size: 24px;
+  }
+
+  input:disabled {
+    border: none;
+    color: black;
+    font-size: 24px;
+    width: 100%;
+    appearance: textfield;
+  }
+
+  input:not(:disabled) {
+    color: black;
+    font-size: 24px;
+    background-color: white;
+    width: 100%;
+  }
+}
+
 
 .container {
   display: flex;
@@ -119,6 +210,12 @@ body {
   }
 
 }
+
+#mod-price,
+#mod-quantity {
+  width: 50%;
+}
+
 
 /* color code for type of meat */
 

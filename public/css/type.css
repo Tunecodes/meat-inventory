@@ -68,53 +68,51 @@
   color: gray;
 }
 
+body {
+  padding-bottom: 100px;
+  /* height of footer */
+}
+
 .container {
+  display: grid;
+  justify-content: center;
+  margin-top: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
+  gap: 10px;
+}
+.container a {
   display: flex;
-  height: 85vh;
+  text-decoration: none;
   justify-content: center;
   align-items: center;
+  height: 200px;
+  color: white;
+  font-size: 25px;
 }
-.container form {
-  display: grid;
-  background-color: rgba(140, 55, 55, 0.25);
-  color: rgb(10, 15, 15);
-  width: 45vw;
-  height: 500px;
-  justify-content: center;
-  padding: 15px;
-}
-.container form,
-.container button {
-  border-radius: 15px;
-}
-.container input {
-  width: 35vw;
-}
-.container button {
-  background-color: #8b3535;
-  border-color: #c2a6a6;
-}
-.container button:hover {
+.container a:hover {
   transform: scale(1.05);
   transition: transform 0.5s ease-in-out;
 }
-.container button {
-  border: white;
-  color: white;
+.container .Beef {
+  background-color: #8B0000;
 }
-.container select {
-  background-color: #8b3535;
-  color: white;
-  border: none;
-  min-width: 200px;
-  min-height: 35px;
+.container .Pork {
+  background-color: #FFC0CB;
 }
-.container select:hover {
-  cursor: pointer;
+.container .Poultry {
+  background-color: #FFD700;
 }
-
-label {
-  font-size: 20px;
+.container .Seafood {
+  background-color: #20B2AA;
+}
+.container .Processed {
+  background-color: #D2B48C;
 }
 
-/*# sourceMappingURL=add-meat.css.map */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=type.css.map */

@@ -1,6 +1,5 @@
 .navbar {
   --bs-dark-rgb: 10, 15, 15;
-  background-color: blue;
   height: 5.5rem;
 }
 .navbar a {
@@ -48,7 +47,7 @@
 
 .footer {
   display: flex;
-  background-color: #0a0f0f;
+  background-color: rgb(10, 15, 15);
   width: 100%;
   color: white;
   gap: 20px;

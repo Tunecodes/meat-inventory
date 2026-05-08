@@ -15,6 +15,25 @@
   <body>
     <%- include("partials/header.ejs") %>
 
+    <dialog class="card-modal" closedby="any">
+      <h1 class="Seafood" id="color-code"></h1>
+      <div>
+        <img class="modal-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5JQU-2kMlWJ0W-QEJZRdXaeueRk1hdJ_rxw&s" alt="" />
+        <form>
+          <input type="text" name="" id="mod-name" value="Pork" class="modal-input" disabled>
+          <label for="mod-price">
+            Price: $<input type="number" id="mod-price" value="23.12" class="modal-input" disabled>
+          </label>
+          <label for="mod-quantity" class="price-label">
+            Quantity: <input type="number" id="mod-quantity" value="23" class="modal-input" disabled>
+          </label>
+          <button class="edit">Edit</button>
+          <button id="delete">Delete</button>
+        </form>
+           
+      </div>  
+    </dialog>
+
     <div class="container">
       <h1>MEAT</h1>
       <div class="main-container">
@@ -87,13 +106,13 @@
         </form>
         <div class="meat-container">
           <% meats.forEach(meat => { %>
-          <a class="meat-card" type="button" href="/">
+          <div class="meat-card" type="button" data-name="<%= meat.name%>">
             <div class="card-type <%= meat.type %>"><%= meat.type %></div>
             <img src="<%=meat.image_url%>" alt="" />
             <label class="card-name"><%= meat.name %> </label>
             <label class="card-price">Price: $<%= meat.price %></label>
             <label class="card-quantity">Quantity: <%= meat.quantity %> </label>
-          </a>
+          </div>
 
           <% }) %>
         </div>
@@ -101,6 +120,9 @@
     </div>
 
     <%- include("partials/footer.ejs") %>
+    <script src="/js/meatModal.js">
+  
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

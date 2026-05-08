@@ -1,8 +1,8 @@
 @use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
 
 .navbar {
   --bs-dark-rgb: 10, 15, 15;
-  background-color: blue;
   height: 5.5rem;
 
   a {
@@ -12,8 +12,6 @@
       color: white;
     }
   }
-
-
 
   .logo {
     display: grid;
