@@ -1,7 +1,12 @@
 import { Pool } from "pg";
 import "dotenv/config";
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 
 const addMeat = async (name, type, quantity, image_url, price) => {
   await pool.query(
