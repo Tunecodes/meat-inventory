@@ -47,12 +47,11 @@ body {
 
       display: grid;
       grid-template-rows: auto;
-      gap: 15px;
+      gap: 20px;
 
       button {
         width: 85%;
         border: none;
-        margin-bottom: 5px;
 
         &:hover {
           transform: scale(1.05);
@@ -215,6 +214,10 @@ body {
 #mod-price,
 #mod-quantity {
   width: 50%;
+}
+
+#delete {
+  margin-bottom: 12px;
 }
 
 
