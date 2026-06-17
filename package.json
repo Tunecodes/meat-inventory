@@ -7,7 +7,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"nodemon app.js\" \"sass --watch scss:public/css\" \"browser-sync start --proxy 'localhost:3000' --files 'public/**/*.*' --browser 'firefox' \""
+    "dev": "concurrently \"nodemon app.js\" \"sass --watch scss:public/css\" \"browser-sync start --proxy 'localhost:3000' --files 'public/**/*.*' --browser 'firefox' \"",
+    "seed": "node db/populatedb.js",
+    "start": "node app.js",
+    "build": "npm run seed && npm run start"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
