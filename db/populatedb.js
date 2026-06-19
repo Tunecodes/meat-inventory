@@ -1,13 +1,9 @@
 #!/usr/bin/env node
 import { Pool } from "pg";
 import "dotenv/config";
-import { watch } from "browser-sync";
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: true,
-  },
 });
 
 //create meat table
