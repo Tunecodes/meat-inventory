@@ -18,6 +18,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
-            cd /home/tune/.github/workflows
+            cd /home/tune/projects/meat-inventory
             git pull origin main
             docker compose up -d --build
