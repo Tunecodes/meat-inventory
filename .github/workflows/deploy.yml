@@ -21,4 +21,4 @@ jobs:
             cd /home/tune/projects/meat-inventory
             git pull origin main
             docker compose down --remove-orphans
-            docker compose up -d --build
+            docker compose up -d --build -T
